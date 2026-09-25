@@ -1,6 +1,17 @@
 # Support CRM System
 
-A full-stack Customer Support Ticketing CRM built with React, FastAPI, and SQLite.
+A full-stack Customer Support Ticketing CRM built with React, FastAPI, SQLAlchemy, and SQLite.
+
+## Live Application
+
+**Frontend:**  
+https://hopeful-determination-production-f89b.up.railway.app
+
+**Backend API:**  
+https://support-crm-production-7b86.up.railway.app
+
+**API Documentation:**  
+https://support-crm-production-7b86.up.railway.app/docs
 
 ## Tech Stack
 
@@ -32,6 +43,7 @@ A full-stack Customer Support Ticketing CRM built with React, FastAPI, and SQLit
 ```text
 Support-CRM/
 ├── backend/
+│   ├── __init__.py
 │   ├── database.py
 │   ├── main.py
 │   ├── models.py
@@ -49,27 +61,30 @@ Support-CRM/
 │
 ├── .env.example
 ├── .gitignore
+├── requirements.txt
 └── README.md
 
-
-
 Local Setup
-1. Clone the repository
-git clone <repository-url>
-cd Support-CRM
+
+1. Clone the Repository
+git clone https://github.com/pratik826/support-crm.git
+cd support-crm
+
+
 2. Backend Setup
-cd backend
-python -m venv .venv
+Create and activate a virtual environment:
 
-Activate the virtual environment on Windows:
+python -m venv backend/.venv
 
-.venv\Scripts\activate
+On Windows:
 
-Install dependencies:
+backend\.venv\Scripts\activate
 
-pip install -r requirements.txt
+Install backend dependencies:
 
-Start the backend:
+pip install -r backend/requirements.txt
+
+Start the backend from the project root:
 
 uvicorn backend.main:app --reload
 
@@ -80,9 +95,10 @@ http://127.0.0.1:8000
 API documentation:
 
 http://127.0.0.1:8000/docs
-3. Frontend Setup
 
-Open another terminal:
+
+3. Frontend Setup
+Open another terminal from the project root:
 
 cd frontend
 npm install
@@ -91,20 +107,29 @@ npm run dev
 Frontend will run at:
 
 http://localhost:5173
-Environment Variables
 
+
+Environment Variables
 Environment variable examples are provided in .env.example.
 
 Actual .env files should not be committed to GitHub.
 
-API Endpoints
-Method	Endpoint	Purpose
-POST	/api/tickets	Create a ticket
-GET	/api/tickets	Get/search/filter tickets
-GET	/api/tickets/{ticket_id}	View ticket details
-PUT	/api/tickets/{ticket_id}	Update status and add notes
-Running the Application
+For local development, the frontend API URL can be configured using:
 
+VITE_API_URL=http://127.0.0.1:8000/api
+
+
+
+API Endpoints
+Method	       Endpoint	                    Purpose
+POST	       /api/tickets	                Create a ticket
+GET	           /api/tickets	                Get, search, and filter tickets
+GET	           /api/tickets/{ticket_id}	    View ticket details
+PUT	           /api/tickets/{ticket_id}	    Update status and add notes
+
+
+
+Running the Application
 Run both services simultaneously:
 
 Frontend → http://localhost:5173
@@ -112,12 +137,12 @@ Backend  → http://127.0.0.1:8000
 
 The React frontend communicates with the FastAPI backend through REST APIs.
 
+
 Deployment
+The frontend and backend are deployed as separate services using Railway.
+Production environment variables are configured in Railway rather than committed to the repository.
+The backend uses persistent SQLite storage through a Railway volume.
 
-The backend and frontend can be deployed as separate services using Railway.
-
-Production environment variables should be configured in the deployment platform rather than committed to the repository.
 
 Assignment
-
 This project was developed as a Customer Support Ticketing CRM System as part of a technical assessment.
