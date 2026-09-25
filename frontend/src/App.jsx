@@ -111,8 +111,26 @@ function App() {
             setNotification('🔔 New ticket received!')
           }
 
-          setTickets(data)
           setAllTickets(data)
+
+          const filteredData = data.filter((ticket) => {
+            const searchTerm = search.toLowerCase()
+
+            const matchesSearch =
+              !search ||
+              ticket.ticket_id.toLowerCase().includes(searchTerm) ||
+              ticket.customer_name.toLowerCase().includes(searchTerm) ||
+              ticket.customer_email.toLowerCase().includes(searchTerm) ||
+              ticket.subject.toLowerCase().includes(searchTerm) ||
+              ticket.description.toLowerCase().includes(searchTerm)
+
+            const matchesStatus =
+              !status || ticket.status === status
+
+            return matchesSearch && matchesStatus
+          })
+
+          setTickets(filteredData)
           setLastTicketCount(data.length)
         })
         .catch((error) => {
@@ -131,7 +149,7 @@ function App() {
     )
 
     return () => clearInterval(interval)
-  }, [userRole, lastTicketCount])
+  }, [userRole, lastTicketCount, search, status])
 
 
   const viewTicket = (ticketId) => {
