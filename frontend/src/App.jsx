@@ -242,8 +242,12 @@ function App() {
           setAllTickets(data)
         }
         setShowCreateForm(false)
-        setCustomerName('')
-        setCustomerEmail('')
+
+        if (userRole === 'employee') {
+          setCustomerName('')
+          setCustomerEmail('')
+        }
+
         setSubject('')
         setDescription('')
       })
