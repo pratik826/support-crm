@@ -1,0 +1,355 @@
+/* ========================================
+   DASHBOARD
+   ======================================== */
+
+/* ---------- Statistics Cards ---------- */
+
+.dashboard-stat-card {
+  position: relative;
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  background: white;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.dashboard-stat-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-stat-card .card-body {
+  padding: 22px;
+}
+
+
+/* ---------- Card Header ---------- */
+
+.stat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stat-title {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* ---------- Stat Number ---------- */
+
+.stat-number {
+  margin: 8px 0 0;
+
+  color: var(--text-primary);
+
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+
+/* ---------- Icons ---------- */
+
+.stat-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  font-size: 18px;
+}
+
+
+/* ---------- Total ---------- */
+
+.stat-total {
+  border-left: 4px solid #0d6efd;
+}
+
+.stat-total .stat-icon {
+  background: #e7f1ff;
+  color: #0d6efd;
+}
+
+
+/* ---------- Open ---------- */
+
+.stat-open {
+  border-left: 4px solid #198754;
+}
+
+.stat-open .stat-icon {
+  background: #e8f5ee;
+  color: #198754;
+}
+
+
+/* ---------- In Progress ---------- */
+
+.stat-progress {
+  border-left: 4px solid #f59e0b;
+}
+
+.stat-progress .stat-icon {
+  background: #fff5dc;
+  color: #f59e0b;
+}
+
+
+/* ---------- Closed ---------- */
+
+.stat-closed {
+  border-left: 4px solid #dc3545;
+}
+
+.stat-closed .stat-icon {
+  background: #fdebec;
+  color: #dc3545;
+}
+
+
+/* ---------- Dashboard Header ---------- */
+
+.dashboard-header {
+  margin-bottom: 24px;
+}
+
+.dashboard-header h1 {
+  margin-bottom: 4px;
+  font-size: 28px;
+}
+
+.dashboard-header p {
+  margin: 0;
+}
+
+
+/* ---------- Recent Tickets ---------- */
+
+.recent-tickets-card {
+  border-radius: 14px;
+}
+
+.recent-tickets-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.recent-tickets-header h4 {
+  margin-bottom: 4px;
+}
+
+.view-all-button {
+  border: none;
+  background: transparent;
+
+  color: var(--primary);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.view-all-button:hover {
+  color: var(--primary-dark);
+}
+
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+
+  .dashboard-header h1 {
+    font-size: 24px;
+  }
+
+  .stat-number {
+    font-size: 26px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .dashboard-header {
+    margin-bottom: 16px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 21px;
+  }
+
+  .dashboard-header p {
+    font-size: 13px;
+  }
+
+  .dashboard-stat-card {
+    border-radius: 10px;
+  }
+
+  .dashboard-stat-card .card-body {
+    padding: 14px;
+  }
+
+  .stat-title {
+    font-size: 11px;
+  }
+
+  .stat-number {
+    font-size: 22px;
+  }
+
+  .stat-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+  }
+
+  .recent-tickets-card {
+    border-radius: 10px;
+  }
+
+  .recent-tickets-header {
+    margin-bottom: 12px;
+  }
+
+  .recent-tickets-header h4 {
+    font-size: 17px;
+  }
+
+  .view-all-button {
+    font-size: 12px;
+  }
+
+  .recent-tickets-card .table {
+    font-size: 11px;
+  }
+
+  .recent-tickets-card .table th,
+  .recent-tickets-card .table td {
+    padding: 7px 6px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .dashboard-stat-card {
+    min-height: 100px;
+  }
+
+  .dashboard-stat-card .card-body {
+    padding: 12px;
+  }
+
+  .stat-header {
+    margin-bottom: 6px;
+  }
+
+  .stat-title {
+    font-size: 10px;
+  }
+
+  .stat-number {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+
+  .stat-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .customer-dashboard {
+    padding: 14px !important;
+  }
+
+  .customer-dashboard h1 {
+    font-size: 24px;
+    line-height: 1.15;
+  }
+
+  .customer-dashboard>div:first-child {
+    margin-bottom: 16px !important;
+  }
+
+  .customer-dashboard>div:first-child p {
+    font-size: 12px;
+  }
+
+  .customer-dashboard .card-body {
+    padding: 12px;
+  }
+
+  .customer-dashboard h4 {
+    font-size: 17px;
+  }
+
+  .customer-dashboard .form-select {
+    font-size: 12px;
+    padding: 7px 10px;
+  }
+
+  .customer-dashboard table th {
+    font-size: 10px;
+    padding: 8px 6px;
+  }
+
+  .customer-dashboard table td {
+    font-size: 12px;
+    padding: 9px 6px;
+  }
+
+  .customer-dashboard .badge {
+    font-size: 10px;
+  }
+
+  .customer-dashboard .mt-3 {
+    font-size: 11px;
+  }
+
+  .recent-tickets-card .btn-link {
+    font-size: 11px !important;
+    line-height: 1.1;
+    padding: 0 !important;
+  }
+
+  .customer-dashboard .form-select {
+    width: 145px;
+    font-size: 12px;
+  }
+
+  /* Compact clickable ticket IDs on mobile */
+  .recent-tickets-card .ticket-id-button,
+  .customer-dashboard .ticket-id-button,
+  .customer-dashboard .btn-link {
+    font-size: 11px !important;
+    line-height: 1.15;
+    padding: 0 !important;
+
+
+  }
+}

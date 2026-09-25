@@ -1,0 +1,396 @@
+/* ========================================
+   TICKETS PAGE
+   ======================================== */
+
+.ticket-list {
+  width: 100%;
+}
+
+
+/* ---------- Toolbar ---------- */
+
+.ticket-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.ticket-search {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 12px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  background: white;
+}
+
+.ticket-search span {
+  color: var(--text-secondary);
+}
+
+.ticket-search input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  font-size: 14px;
+}
+
+.ticket-filter {
+  width: 190px;
+
+  padding: 10px 12px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  background: white;
+
+  color: var(--text-primary);
+
+  outline: none;
+}
+
+.ticket-filter:focus {
+  border-color: var(--primary);
+}
+
+
+/* ---------- Result Count ---------- */
+
+.ticket-result-count {
+  margin-bottom: 12px;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+}
+
+
+/* ---------- Table ---------- */
+
+.ticket-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.ticket-table thead th {
+  padding: 13px 10px;
+
+  background: #f8fafc;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.ticket-table tbody td {
+  padding: 14px 10px;
+
+  border-bottom: 1px solid var(--border);
+
+  font-size: 14px;
+}
+
+.ticket-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.ticket-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+
+/* ---------- Ticket ID ---------- */
+
+.ticket-id-button {
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: var(--primary);
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.ticket-id-button:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+
+/* ---------- Subject ---------- */
+
+.ticket-subject {
+  color: var(--text-primary);
+}
+
+
+/* ---------- Empty State ---------- */
+
+.ticket-empty-state {
+  padding: 60px 20px;
+
+  text-align: center;
+
+  color: var(--text-secondary);
+}
+
+.empty-icon {
+  margin-bottom: 12px;
+
+  font-size: 32px;
+}
+
+.ticket-empty-state h5 {
+  margin-bottom: 6px;
+
+  color: var(--text-primary);
+}
+
+.ticket-empty-state p {
+  margin: 0;
+
+  font-size: 14px;
+}
+
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+
+  .ticket-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ticket-filter {
+    width: 100%;
+  }
+
+  .ticket-table {
+    min-width: 700px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .ticket-toolbar {
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .ticket-search {
+    padding: 8px 10px;
+  }
+
+  .ticket-search input {
+    font-size: 12px;
+  }
+
+  .ticket-filter {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .ticket-result-count {
+    margin-bottom: 8px;
+    font-size: 11px;
+  }
+
+  .ticket-table {
+    min-width: 560px;
+  }
+
+  .ticket-table thead th {
+    padding: 9px 7px;
+    font-size: 10px;
+  }
+
+  .ticket-table tbody td {
+    padding: 10px 7px;
+    font-size: 12px;
+  }
+
+  .ticket-id-button {
+    font-size: 11px !important;
+    line-height: 1.1;
+  }
+
+  .ticket-pagination {
+    gap: 6px;
+    margin-top: 12px;
+    padding-top: 10px;
+  }
+
+  .pagination-button,
+  .pagination-page {
+    min-width: 30px;
+    height: 30px;
+    font-size: 11px;
+  }
+
+  .pagination-button {
+    padding: 0 8px;
+  }
+}
+
+/* ---------- Pagination ---------- */
+
+.ticket-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 18px;
+  padding-top: 16px;
+
+  border-top: 1px solid var(--border);
+}
+
+.pagination-pages {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pagination-button,
+.pagination-page {
+  min-width: 36px;
+  height: 36px;
+
+  border: 1px solid var(--border);
+  border-radius: 7px;
+
+  background: white;
+  color: var(--text-primary);
+
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+.pagination-button {
+  padding: 0 12px;
+}
+
+.pagination-button:hover:not(:disabled),
+.pagination-page:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.pagination-page.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .ticket-pagination {
+    gap: 10px;
+  }
+
+  .pagination-pages {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* ---------- Ticket Details ---------- */
+
+  .ticket-details-card,
+  .customer-ticket-details {
+    margin-top: 16px !important;
+  }
+
+  .ticket-details-card .card-body,
+  .customer-ticket-details .card-body {
+    padding: 12px;
+  }
+
+  .ticket-details-header,
+  .customer-ticket-details-header {
+    margin-bottom: 14px !important;
+    align-items: flex-start !important;
+  }
+
+  .ticket-details-header h3,
+  .customer-ticket-details-header h3 {
+    font-size: 21px;
+  }
+
+  .ticket-details-header p,
+  .customer-ticket-details-header p {
+    font-size: 12px;
+  }
+
+  .ticket-details-header .btn,
+  .customer-ticket-details-header .btn {
+    font-size: 12px;
+    padding: 7px 10px;
+  }
+
+  .ticket-details-grid,
+  .customer-ticket-details-grid {
+    row-gap: 12px !important;
+  }
+
+  .ticket-details-grid h6,
+  .customer-ticket-details-grid h6 {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .ticket-details-grid p,
+  .customer-ticket-details-grid p {
+    font-size: 13px;
+    margin-bottom: 0;
+  }
+
+  .ticket-details-card hr,
+  .customer-ticket-details hr {
+    margin: 14px 0;
+  }
+
+  .ticket-details-card h5 {
+    font-size: 15px;
+    margin-bottom: 10px !important;
+  }
+
+  .ticket-details-card .border.rounded {
+    padding: 10px !important;
+  }
+
+  .ticket-details-card textarea {
+    font-size: 12px;
+  }
+
+  .ticket-details-card .btn-primary {
+    font-size: 12px;
+    padding: 7px 12px;
+  }
+}

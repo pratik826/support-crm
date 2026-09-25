@@ -1,0 +1,185 @@
+/* ========================================
+   SUPPORT CRM - GLOBAL STYLES
+   ======================================== */
+
+/* ---------- Color Variables ---------- */
+
+:root {
+  --primary: #0d6efd;
+  --primary-dark: #0b5ed7;
+
+  --background: #f5f7fb;
+  --surface: #ffffff;
+
+  --text-primary: #172033;
+  --text-secondary: #6b7280;
+
+  --border: #e5e7eb;
+
+  --sidebar: #142d4c;
+  --sidebar-hover: #1d4775;
+
+  --success: #198754;
+  --warning: #f59e0b;
+  --danger: #dc3545;
+
+  --border-radius: 12px;
+}
+
+
+/* ---------- Base ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color: var(--background);
+  color: var(--text-primary);
+
+  font-family: Inter, Arial, sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+
+/* ---------- Links ---------- */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* ---------- Cards ---------- */
+
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+
+/* ---------- Inputs ---------- */
+
+.form-control,
+.form-select {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  padding: 10px 12px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary);
+
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.12);
+}
+
+
+/* ---------- Tables ---------- */
+
+.table {
+  margin-bottom: 0;
+}
+
+.table thead th {
+  background-color: #f8fafc;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.table tbody td {
+  vertical-align: middle;
+}
+
+
+/* ---------- Status Badges ---------- */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-open {
+  background-color: #d1e7dd;
+  color: #146c43;
+}
+
+.status-progress {
+  background-color: #fff3cd;
+  color: #997404;
+}
+
+.status-closed {
+  background-color: #f8d7da;
+  color: #b02a37;
+}
+
+
+/* ---------- Page Content ---------- */
+
+.page-content {
+  padding: 28px;
+}
+
+
+/* ---------- Utility ---------- */
+
+.text-muted {
+  color: var(--text-secondary) !important;
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 768px) {
+  .page-content {
+    padding: 18px;
+  }
+}

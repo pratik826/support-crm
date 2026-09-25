@@ -1,0 +1,108 @@
+/* ========================================
+   FORMS
+   ======================================== */
+
+.ticket-form-card {
+  max-width: 900px;
+}
+
+.ticket-form-section {
+  margin-bottom: 24px;
+}
+
+.ticket-form-section-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.ticket-form-label {
+  display: block;
+  margin-bottom: 7px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  color: var(--text-primary);
+}
+
+.ticket-form .form-control {
+  min-height: 44px;
+}
+
+.ticket-form textarea.form-control {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.ticket-form-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 24px;
+  padding-top: 20px;
+
+  border-top: 1px solid var(--border);
+}
+
+.ticket-form-submit {
+  min-width: 140px;
+}
+
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .ticket-form-card {
+    max-width: 100%;
+  }
+
+  .ticket-form-actions {
+    justify-content: stretch;
+  }
+
+  .ticket-form-submit {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .ticket-form-card {
+    border-radius: 10px;
+  }
+
+  .ticket-form-section {
+    margin-bottom: 16px;
+  }
+
+  .ticket-form-section-title {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .ticket-form-label {
+    margin-bottom: 5px;
+    font-size: 11px;
+  }
+
+  .ticket-form .form-control {
+    min-height: 38px;
+    font-size: 12px;
+  }
+
+  .ticket-form textarea.form-control {
+    min-height: 100px;
+  }
+
+  .ticket-form-actions {
+    margin-top: 16px;
+    padding-top: 14px;
+  }
+
+  .ticket-form-submit {
+    min-width: 120px;
+    font-size: 12px;
+  }
+}
