@@ -104,33 +104,29 @@ function App() {
     const checkForNewTickets = () => {
       getTickets('', '', '')
         .then((data) => {
-          if (
+          const newTicketReceived =
             lastTicketCount > 0 &&
             data.length > lastTicketCount
-          ) {
+
+          if (newTicketReceived) {
             setNotification('🔔 New ticket received!')
+
+            // Refresh the ticket table only when a new ticket is detected
+            getTickets(search, status, '')
+              .then((filteredData) => {
+                setTickets(filteredData)
+              })
+              .catch((error) => {
+                console.error(
+                  'Error refreshing ticket list:',
+                  error
+                )
+              })
           }
 
+          // Update dashboard data
           setAllTickets(data)
 
-          const filteredData = data.filter((ticket) => {
-            const searchTerm = search.toLowerCase()
-
-            const matchesSearch =
-              !search ||
-              ticket.ticket_id.toLowerCase().includes(searchTerm) ||
-              ticket.customer_name.toLowerCase().includes(searchTerm) ||
-              ticket.customer_email.toLowerCase().includes(searchTerm) ||
-              ticket.subject.toLowerCase().includes(searchTerm) ||
-              ticket.description.toLowerCase().includes(searchTerm)
-
-            const matchesStatus =
-              !status || ticket.status === status
-
-            return matchesSearch && matchesStatus
-          })
-
-          setTickets(filteredData)
           setLastTicketCount(data.length)
         })
         .catch((error) => {
